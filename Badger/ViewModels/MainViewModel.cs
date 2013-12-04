@@ -8,6 +8,7 @@ using System.ComponentModel.Composition;
 
 namespace Badger.ViewModels
 {
+    [Export(typeof(MainViewModel))]
     public class MainViewModel : PropertyChangedBase, IHaveDisplayName
     {
         private string _displayName = "Badger";
@@ -35,5 +36,18 @@ namespace Badger.ViewModels
         }
 
         #endregion
+
+        private readonly IWindowManager _windowManager;
+
+        [ImportingConstructor]
+        public MainViewModel(IWindowManager windowManager)
+        {
+            _windowManager = windowManager;
+        }
+
+        public void ConfigureSettings()
+        {
+            _windowManager.ShowWindow(new BadgerSettingsViewModel());
+        }
     }
 }
