@@ -54,6 +54,7 @@
       <HintPath>..\packages\reactiveui-core.5.3.0\lib\Portable-Net45+WinRT45+WP8\ReactiveUI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Reactive.Core">
       <HintPath>..\packages\Rx-Core.2.1.30214.0\lib\Net45\System.Reactive.Core.dll</HintPath>
@@ -87,8 +88,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BadgerBootStrapper.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Page Include="MainView.xaml">
+    <Page Include="Views\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -96,7 +98,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainView.xaml.cs">
+    <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -139,9 +141,7 @@
   <ItemGroup>
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
