@@ -9,7 +9,7 @@ using Caliburn.Micro;
 namespace Badger.ViewModels
 {
     [Export(typeof(BadgerWindowViewModel))]
-    public class BadgerWindowViewModel : PropertyChangedBase, IHaveDisplayName
+    public class BadgerWindowViewModel : PropertyChangedBase, IBadgerWindowViewModel
     {
         private string _displayName = "Extended Badger View";
 

@@ -89,7 +89,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BadgerBootStrapper.cs" />
-    <Compile Include="ViewModels\BadgerExtendedViewModel.cs" />
+    <Compile Include="ViewModels\BadgerWindowViewModel.cs" />
+    <Compile Include="ViewModels\IBadgerWindowViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
