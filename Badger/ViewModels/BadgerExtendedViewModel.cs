@@ -11,7 +11,7 @@ namespace Badger.ViewModels
     [Export(typeof(BadgerExtendedViewModel))]
     public class BadgerExtendedViewModel : PropertyChangedBase, IHaveDisplayName
     {
-        private string _displayName = "Extended Badger";
+        private string _displayName = "Extended Badger View";
 
         #region IHaveDisplayName Members
 

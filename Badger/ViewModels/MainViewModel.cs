@@ -8,7 +8,6 @@ using System.ComponentModel.Composition;
 
 namespace Badger.ViewModels
 {
-    
     public class MainViewModel : PropertyChangedBase, IHaveDisplayName
     {
         private string _displayName = "Badger";
