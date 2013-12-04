@@ -1,0 +1,9 @@
+﻿<MahApps:MetroWindow x:Class="Badger.Views.BadgerSettingsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:MahApps="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="BadgerSettingsView" Height="300" Width="300">
+    <Grid>
+        
+    </Grid>
+</MahApps:MetroWindow>

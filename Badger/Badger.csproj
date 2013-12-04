@@ -89,12 +89,19 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BadgerBootStrapper.cs" />
+    <Compile Include="ViewModels\BadgerSettingsViewModel.cs" />
     <Compile Include="ViewModels\BadgerWindowViewModel.cs" />
+    <Compile Include="ViewModels\IBadgerDashboardViewModel.cs" />
+    <Compile Include="ViewModels\IBadgerSettingsItemViewModel.cs" />
+    <Compile Include="ViewModels\IBadgerSettingsViewModel.cs" />
     <Compile Include="ViewModels\IBadgerWindowViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\BadgerSettingsView.xaml.cs">
+      <DependentUpon>BadgerSettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
@@ -102,6 +109,10 @@
     <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BadgerSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainView.xaml">
       <SubType>Designer</SubType>
