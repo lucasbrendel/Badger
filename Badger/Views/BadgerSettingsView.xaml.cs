@@ -11,13 +11,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace Badger.Views
 {
     /// <summary>
     /// Interaction logic for BadgerSettingsView.xaml
     /// </summary>
-    public partial class BadgerSettingsView : Window
+    public partial class BadgerSettingsView : MetroWindow
     {
         public BadgerSettingsView()
         {
