@@ -24,10 +24,5 @@ namespace Badger.Views
         {
             InitializeComponent();
         }
-
-        public void ConfigureSettings()
-        {
-
-        }
     }
 }
