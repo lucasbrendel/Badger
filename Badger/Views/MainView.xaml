@@ -4,12 +4,29 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainView" Height="300" Width="300">
     <Grid>
-        <Button x:Name="ConfigureSettings" HorizontalAlignment="Right" Height="50" Width="50"  VerticalAlignment="Top" Style="{DynamicResource MetroCircleButtonStyle}">
-            <Rectangle Fill="Gray" Height="30" Width="30">
-                 <Rectangle.OpacityMask>
-                    <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_settings}"/>
-                </Rectangle.OpacityMask>
-            </Rectangle>
-        </Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" >
+            <Button x:Name="AddItem" Height="58" Width="58" Style="{DynamicResource MetroCircleButtonStyle}">
+                <Rectangle Fill="Gray" Height="38" Width="38">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_add}"/>
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Button>
+            <Button x:Name="ConfigureSettings" Height="58" Width="58" Style="{DynamicResource MetroCircleButtonStyle}">
+                <Rectangle Fill="Gray" Height="38" Width="38">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_settings}"/>
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Button>
+        </StackPanel>
+        <MahApps:MetroAnimatedTabControl Grid.Row="1">
+            <MahApps:MetroTabItem Header="Dashboard"/>
+            <MahApps:MetroTabItem Header="Tools"/>
+        </MahApps:MetroAnimatedTabControl>
     </Grid>
 </MahApps:MetroWindow>
