@@ -39,12 +39,19 @@ namespace Badger.ViewModels
 
         private readonly IWindowManager _windowManager;
 
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        /// <param name="windowManager"></param>
         [ImportingConstructor]
         public MainViewModel(IWindowManager windowManager)
         {
             _windowManager = windowManager;
         }
 
+        /// <summary>
+        /// Opens the view model to configure application settings
+        /// </summary>
         public void ConfigureSettings()
         {
             _windowManager.ShowWindow(new BadgerSettingsViewModel());
