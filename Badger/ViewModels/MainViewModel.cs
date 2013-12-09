@@ -54,7 +54,7 @@ namespace Badger.ViewModels
         /// </summary>
         public void ConfigureSettings()
         {
-            _windowManager.ShowWindow(new BadgerSettingsViewModel());
+            _windowManager.ShowWindow(new BadgerSettingsViewModel(new List<IBadgerSettingsItemViewModel>()));
         }
     }
 }

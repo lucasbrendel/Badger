@@ -4,6 +4,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="BadgerSettingsView" Height="300" Width="300">
     <Grid>
-        
+        <MahApps:MetroTabControl x:Name="SettingsOptions">
+            <MahApps:MetroTabControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding DisplayName}"/>
+                </DataTemplate>
+            </MahApps:MetroTabControl.ItemTemplate>
+        </MahApps:MetroTabControl>
     </Grid>
 </MahApps:MetroWindow>

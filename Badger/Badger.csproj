@@ -89,16 +89,22 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BadgerBootStrapper.cs" />
+    <Compile Include="Commands\SimpleCommand.cs" />
+    <Compile Include="ViewModels\AppearanceSettingsViewModel.cs" />
+    <Compile Include="ViewModels\BadgerSettingsItemViewModel.cs" />
     <Compile Include="ViewModels\BadgerSettingsViewModel.cs" />
     <Compile Include="ViewModels\BadgerWindowViewModel.cs" />
     <Compile Include="ViewModels\IBadgerDashboardViewModel.cs" />
     <Compile Include="ViewModels\IBadgerSettingsItemViewModel.cs" />
-    <Compile Include="ViewModels\IBadgerSettingsViewModel.cs" />
     <Compile Include="ViewModels\IBadgerWindowViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModels\WebSettingsViewModel.cs" />
+    <Compile Include="Views\AppearanceSettingsView.xaml.cs">
+      <DependentUpon>AppearanceSettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\BadgerSettingsView.xaml.cs">
       <DependentUpon>BadgerSettingsView.xaml</DependentUpon>
@@ -106,15 +112,26 @@
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\WebSettingsView.xaml.cs">
+      <DependentUpon>WebSettingsView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AppearanceSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\BadgerSettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WebSettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

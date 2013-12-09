@@ -7,7 +7,7 @@ using Caliburn.Micro;
 
 namespace Badger.ViewModels
 {
-    public interface IBadgerSettingsItemViewModel
+    public interface IBadgerSettingsItemViewModel : IHaveDisplayName
     {
 
     }

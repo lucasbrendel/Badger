@@ -4,32 +4,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
+using System.ComponentModel.Composition;
+using System.ComponentModel.Composition.Hosting;
+using System.ComponentModel.Composition.Primitives;
+using System.Reflection;
 
 namespace Badger.ViewModels
 {
-    public class BadgerSettingsViewModel : PropertyChangedBase, IBadgerSettingsViewModel
+    public class BadgerSettingsViewModel
     {
-        private string _displayName = "Badger Settings";
+        private List<IBadgerSettingsItemViewModel> _settingsOptions;
 
-        #region IHaveDisplayName Members
-
-        public string DisplayName
+        [ImportMany]
+        public List<IBadgerSettingsItemViewModel> SettingsOptions
         {
-            get
-            {
-                return _displayName;
-            }
+            get { return _settingsOptions; }
             set
             {
-                if (value != _displayName)
-                {
-                    _displayName = value;
-
-                    NotifyOfPropertyChange(() => DisplayName);
-                }
+                _settingsOptions = value;
             }
         }
 
-        #endregion
+        /// <summary>
+        /// 
+        /// </summary>
+        public BadgerSettingsViewModel(List<IBadgerSettingsItemViewModel> _settings)
+        {
+            try
+            {
+                var catalog = new AssemblyCatalog(Assembly.GetExecutingAssembly());
+                var container = new CompositionContainer(catalog);
+
+                container.ComposeParts(this);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            //SettingsOptions = _settings;
+        }
     }
 }
