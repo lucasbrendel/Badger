@@ -41,8 +41,6 @@ namespace Badger.ViewModels
             {
                 throw ex;
             }
-
-            //SettingsOptions = _settings;
         }
     }
 }
