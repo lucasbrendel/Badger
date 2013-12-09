@@ -16,3 +16,5 @@ I am initially using this as a way to learn different third party WPF libraries.
 - Akavache (Maybe)
 - Squirrel (Somehow)
 - MEF (Not third party. Deal with it.)
+
+[Trello Board Link](https://trello.com/b/tgGmYKFs)
