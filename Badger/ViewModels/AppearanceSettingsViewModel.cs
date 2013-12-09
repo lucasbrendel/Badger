@@ -48,7 +48,18 @@ namespace Badger.ViewModels
                 }
             }
         }
-        
+
+        public void SetThemeDark()
+        {
+            var theme = ThemeManager.DetectTheme(Application.Current);
+            ThemeManager.ChangeTheme(Application.Current, theme.Item2, Theme.Dark);
+        }
+
+        public void SetThemeLight()
+        {
+            var theme = ThemeManager.DetectTheme(Application.Current);
+            ThemeManager.ChangeTheme(Application.Current, theme.Item2, Theme.Light);
+        }
     }
 
     public class AccentColorData

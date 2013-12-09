@@ -7,22 +7,49 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <ListBox ItemsSource="{Binding AccentColors, Mode=OneWay}">
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ScrollContentPresenter}}}" IsItemsHost="True" />
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Button Command="{Binding ChangeAccentCommand}" MinWidth="75" Margin="12">
+        <StackPanel>
+            <TextBlock Text="Theme Colors"/>
+            <ListBox>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ScrollContentPresenter}}}" IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBoxItem>
+                    <Button x:Name="SetThemeLight">
                         <StackPanel Orientation="Horizontal">
-                            <Ellipse Width="50" Height="50" Fill="{Binding ColorBrush, Mode=OneWay}"/>
-                            <TextBlock FontSize="20" Text="{Binding Name}"/>
+                            <Ellipse Width="50" Height="50" Fill="White" Stroke="Black"/>
+                            <TextBlock FontSize="20" Text="Light Theme"/>
                         </StackPanel>
                     </Button>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <Button x:Name="SetThemeDark">
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Width="50" Height="50" Fill="Black" Stroke="Black"/>
+                            <TextBlock FontSize="20" Text="Dark Theme"/>
+                        </StackPanel>
+                    </Button>
+                </ListBoxItem>
+            </ListBox>
+            <TextBlock Text="Accent Colors"/>
+            <ListBox ItemsSource="{Binding AccentColors, Mode=OneWay}">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ScrollContentPresenter}}}" IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Button Command="{Binding ChangeThemeCommand}" MinWidth="75" Margin="12">
+                            <StackPanel Orientation="Horizontal">
+                                <Ellipse Width="50" Height="50" Fill="{Binding ColorBrush, Mode=OneWay}"/>
+                                <TextBlock FontSize="20" Text="{Binding Name}"/>
+                            </StackPanel>
+                        </Button>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
     </Grid>
 </UserControl>
