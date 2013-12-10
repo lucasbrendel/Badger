@@ -90,6 +90,9 @@
     </ApplicationDefinition>
     <Compile Include="BadgerBootStrapper.cs" />
     <Compile Include="Commands\SimpleCommand.cs" />
+    <Compile Include="Managers\IHaveStartupTask.cs" />
+    <Compile Include="Managers\ISystemSettingLoader.cs" />
+    <Compile Include="Managers\SystemSettingsManager.cs" />
     <Compile Include="ViewModels\AppearanceSettingsViewModel.cs" />
     <Compile Include="ViewModels\BadgerSettingsItemViewModel.cs" />
     <Compile Include="ViewModels\BadgerSettingsViewModel.cs" />
