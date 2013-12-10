@@ -10,11 +10,12 @@ using MahApps.Metro;
 using System.Windows.Media;
 using System.Windows;
 using Badger.Commands;
+using Badger.Managers;
 
 namespace Badger.ViewModels
 {
     /// <summary>
-    /// 
+    /// Setting Item to change the Theme and Accent Colors
     /// </summary>
     [Export(typeof(IBadgerSettingsItemViewModel))]
     public class AppearanceSettingsViewModel : BadgerSettingsItemViewModel
@@ -49,12 +50,18 @@ namespace Badger.ViewModels
             }
         }
 
+        /// <summary>
+        /// Change the theme to the Dark Theme
+        /// </summary>
         public void SetThemeDark()
         {
             var theme = ThemeManager.DetectTheme(Application.Current);
             ThemeManager.ChangeTheme(Application.Current, theme.Item2, Theme.Dark);
         }
 
+        /// <summary>
+        /// Change the theme to the Light Theme
+        /// </summary>
         public void SetThemeLight()
         {
             var theme = ThemeManager.DetectTheme(Application.Current);
@@ -62,13 +69,26 @@ namespace Badger.ViewModels
         }
     }
 
+    /// <summary>
+    /// Class for aggregating and changing the accent color
+    /// </summary>
     public class AccentColorData
     {
+        /// <summary>
+        /// Name of the accent color
+        /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// The color of the accent
+        /// </summary>
         public Brush ColorBrush { get; set; }
 
         private ICommand changeAccentCommand;
 
+        /// <summary>
+        /// Command to trigger changing the accent color
+        /// </summary>
         public ICommand ChangeAccentCommand
         {
             get { return this.changeAccentCommand ?? (changeAccentCommand = new SimpleCommand { CanExecuteDelegate = x => true, ExecuteDelegate = x => ChangeAccent(x) }); }
