@@ -30,9 +30,7 @@ namespace Badger.ViewModels
         {
             this.DisplayName = "Appearance";
 
-            this._accentColors = ThemeManager.DefaultAccents
-                                            .Select(a => new AccentColorData() { Name = a.Name, ColorBrush = a.Resources["AccentColorBrush"] as Brush })
-                                            .ToList();
+            this._accentColors = SystemSettingsManager.GetSystemAccents();
         }
 
         /// <summary>
@@ -55,8 +53,7 @@ namespace Badger.ViewModels
         /// </summary>
         public void SetThemeDark()
         {
-            var theme = ThemeManager.DetectTheme(Application.Current);
-            ThemeManager.ChangeTheme(Application.Current, theme.Item2, Theme.Dark);
+            SystemSettingsManager.SetThemeDark();
         }
 
         /// <summary>
@@ -64,25 +61,8 @@ namespace Badger.ViewModels
         /// </summary>
         public void SetThemeLight()
         {
-            var theme = ThemeManager.DetectTheme(Application.Current);
-            ThemeManager.ChangeTheme(Application.Current, theme.Item2, Theme.Light);
+            SystemSettingsManager.SetThemeLight();
         }
-    }
-
-    /// <summary>
-    /// Class for aggregating and changing the accent color
-    /// </summary>
-    public class AccentColorData
-    {
-        /// <summary>
-        /// Name of the accent color
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// The color of the accent
-        /// </summary>
-        public Brush ColorBrush { get; set; }
 
         private ICommand changeAccentCommand;
 
@@ -91,14 +71,9 @@ namespace Badger.ViewModels
         /// </summary>
         public ICommand ChangeAccentCommand
         {
-            get { return this.changeAccentCommand ?? (changeAccentCommand = new SimpleCommand { CanExecuteDelegate = x => true, ExecuteDelegate = x => ChangeAccent(x) }); }
-        }
-
-        private void ChangeAccent(object sender)
-        {
-            var theme = ThemeManager.DetectTheme(Application.Current);
-            var accent = ThemeManager.DefaultAccents.First(x => x.Name == this.Name);
-            ThemeManager.ChangeTheme(Application.Current, accent, theme.Item1);
+            get { return this.changeAccentCommand ?? (changeAccentCommand = new SimpleCommand { CanExecuteDelegate = x => true, ExecuteDelegate = x => SystemSettingsManager.ChangeAccent(x) }); }
         }
     }
+
+
 }

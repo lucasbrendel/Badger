@@ -8,12 +8,18 @@ using Badger.ViewModels;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
+using Badger.Managers;
 
 namespace Badger
 {
     public class BadgerBootStrapper : Bootstrapper<MainViewModel>
     {
         private CompositionContainer container;
+
+        public BadgerBootStrapper()
+        {
+            SystemSettingsManager.Startup();
+        }
 
         protected override void Configure()
         {
